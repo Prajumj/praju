@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>M J Prajwal – Digital Marketing Portfolio</title>
+<meta name="description" content="Portfolio of M J Prajwal — Digital Marketing Executive & SEO Specialist" />
+
+<!-- Social cards -->
+<meta property="og:title" content="M J Prajwal – Digital Marketing Portfolio" />
+<meta property="og:description" content="Digital Marketing Executive & SEO Specialist. Driving growth through strategy, creativity & data." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&q=80&auto=format&fit=crop" />
+<meta name="theme-color" content="#0D1117" />
+
+<style>
+  :root{
+    --bg:#0D1117;
+    --panel:#0f1623;
+    --ink:#e6f1ff;
+    --muted:#9fb2c8;
+    --brand:#00bfff;
+    --brand-2:#4de3ff;
+    --chip:#122135;
+    --glass:rgba(255,255,255,.06);
+    --border:rgba(255,255,255,.12);
+    --shadow:0 10px 30px rgba(0,0,0,.35);
+    --radius:18px;
+    --radius-lg:28px;
+    --max:1100px;
+  }
+
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    color:var(--ink);
+    background:radial-gradient(1400px 800px at 80% -10%, #0b2a39 0%, transparent 60%),
+               radial-gradient(1000px 700px at -10% 20%, #071c2a 0%, transparent 60%),
+               var(--bg);
+    line-height:1.6;
+  }
+
+  /* Subtle animated gradient blob */
+  .hero-blob{
+    position:absolute; inset:-20vmax -20vmax auto auto;
+    width:60vmax; height:60vmax; filter:blur(80px) saturate(130%);
+    background: conic-gradient(from 120deg, #0e3a55, #0a2346, #0e3a55);
+    animation: spin 26s linear infinite;
+    opacity:.35; pointer-events:none;
+  }
+  @keyframes spin{to{transform:rotate(360deg)}}
+
+  .wrapper{max-width:var(--max); margin:0 auto; padding:0 24px}
+  a{color:var(--brand-2); text-decoration:none}
+  a:hover{opacity:.9}
+
+  /* NAV */
+  .nav{
+    position:sticky; top:0; z-index:20;
+    backdrop-filter: blur(10px);
+    background: linear-gradient(180deg, rgba(13,17,23,.85), rgba(13,17,23,.55));
+    border-bottom:1px solid var(--border);
+  }
+  .nav-inner{display:flex; align-items:center; justify-content:space-between; height:64px}
+  .brand{display:flex; align-items:center; gap:12px; font-weight:700; letter-spacing:.3px}
+  .brand-logo{
+    width:36px; height:36px; border-radius:50%;
+    background: radial-gradient(100% 100% at 70% 30%, var(--brand), #005c7a);
+    box-shadow: inset 0 0 14px rgba(255,255,255,.2);
+  }
+  .menu{display:flex; gap:18px}
+  .menu a{padding:8px 12px; border-radius:10px}
+  .menu a:hover{background:var(--glass)}
+
+  /* HERO */
+  header{
+    position:relative; overflow:hidden;
+    padding:90px 0 70px;
+  }
+  .hero{
+    display:grid; grid-template-columns: 1.1fr .9fr; gap:36px; align-items:center;
+  }
+  .hero-left h1{
+    font-size:clamp(34px,5vw,54px); line-height:1.05; margin:0 0 10px;
+    color:var(--ink);
+  }
+  .hero-left h1 .accent{
+    background: linear-gradient(90deg, var(--brand) 0%, #73f2ff 100%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .sub{font-size:clamp(16px,2.2vw,20px); color:#e2f5ff; opacity:.9; margin:0 0 18px}
+  .tagline{color:var(--muted); margin:0 0 26px}
+  .cta{display:flex; gap:14px; flex-wrap:wrap}
+  .btn{
+    padding:12px 16px; border-radius:12px; border:1px solid var(--border);
+    background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+    color:var(--ink); font-weight:600; box-shadow:var(--shadow);
+  }
+  .btn.primary{
+    border-color:rgba(0,191,255,.5);
+    background:linear-gradient(180deg, rgba(0,191,255,.25), rgba(0,191,255,.10));
+  }
+  .hero-card{
+    background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+    border:1px solid var(--border); border-radius:var(--radius-lg);
+    padding:22px; box-shadow:var(--shadow);
+  }
+  .avatar{
+    width:96px; height:96px; border-radius:50%;
+    background:url('https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=600&q=80&auto=format&fit=crop') center/cover;
+    border:2px solid rgba(255,255,255,.4); box-shadow:0 6px 22px rgba(0,0,0,.3);
+  }
+  .hero-card-top{display:flex; align-items:center; gap:16px; margin-bottom:16px}
+  .badges{display:flex; gap:8px; flex-wrap:wrap}
+  .chip{
+    background:var(--chip); border:1px solid var(--border);
+    padding:6px 10px; border-radius:999px; color:#cfe9ff; font-size:12px
+  }
+  .hero-media{
+    position:relative; overflow:hidden; border-radius:16px; margin-top:14px;
+    border:1px solid var(--border)
+  }
+  .hero-media img{width:100%; display:block; aspect-ratio: 16/10; object-fit:cover; filter:saturate(1.05)}
+  .playbar{position:absolute; inset:auto 10px 10px 10px; height:6px; background:rgba(255,255,255,.12); border-radius:999px}
+  .playbar::after{
+    content:""; display:block; height:100%; width:38%;
+    background:linear-gradient(90deg, var(--brand), #73f2ff);
+    border-radius:inherit; box-shadow:0 0 12px rgba(0,191,255,.6) inset;
+  }
+
+  section{padding:70px 0; position:relative}
+  .section-title{
+    display:flex; align-items:center; gap:12px; margin:0 0 24px;
+    font-size:28px; color:var(--brand);
+  }
+  .section-lead{color:var(--muted); margin:-6px 0 26px}
+
+  /* GRID CARDS */
+  .grid{display:grid; gap:18px}
+  .grid.projects{grid-template-columns: repeat(12, 1fr)}
+  .project-card{
+    grid-column: span 12;
+    background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+    border:1px solid var(--border); border-radius:16px; overflow:hidden;
+    display:grid; grid-template-columns: 1.1fr .9fr; min-height:260px;
+  }
+  .project-media{position:relative; overflow:hidden}
+  .project-media img{width:100%; height:100%; object-fit:cover; display:block}
+  .project-body{padding:18px}
+  .project-title{margin:0 0 6px; color:var(--brand); font-size:22px}
+  .meta{color:#d6f3ff; opacity:.9; font-size:14px; margin:0 0 10px}
+  .bullets{margin:10px 0 14px; padding-left:18px}
+  .tools{display:flex; gap:8px; flex-wrap:wrap}
+  .pill{background:rgba(0,191,255,.10); border:1px solid rgba(0,191,255,.35); color:#bfefff; padding:6px 10px; border-radius:999px; font-size:12px}
+
+  .project-card:hover .project-media img{transform:scale(1.03); transition:.6s ease; filter:contrast(1.05)}
+  .project-card:hover{box-shadow:0 18px 50px rgba(0,0,0,.35)}
+
+  /* SKILLS */
+  .skills-wrap{
+    display:flex; flex-wrap:wrap; gap:10px;
+    background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+    border:1px solid var(--border); border-radius:var(--radius); padding:18px;
+  }
+
+  /* STATS / HIGHLIGHTS */
+  .highlights{
+    display:grid; grid-template-columns: repeat(3, 1fr); gap:14px;
+    margin-top:16px;
+  }
+  .highlight{
+    background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+    border:1px solid var(--border); border-radius:16px; padding:16px; text-align:center
+  }
+  .big{font-size:26px; font-weight:800; color:#eaffff}
+  .small{font-size:12px; color:var(--muted)}
+
+  /* CONTACT */
+  .contact-card{
+    display:grid; grid-template-columns: 1fr 1fr; gap:18px; align-items:stretch;
+  }
+  .contact-pane{
+    background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+    border:1px solid var(--border); border-radius:16px; padding:18px
+  }
+  .contact-pane img{width:100%; height:100%; object-fit:cover; border-radius:12px}
+
+  footer{
+    border-top:1px solid var(--border);
+    padding:26px 0; color:var(--muted); text-align:center
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 980px){
+    .hero{grid-template-columns:1fr}
+    .project-card{grid-template-columns:1fr}
+    .contact-card{grid-template-columns:1fr}
+  }
+
+  /* Simple reveal on scroll */
+  .reveal{opacity:0; transform:translateY(16px); transition: all .7s ease}
+  .reveal.show{opacity:1; transform:none}
+</style>
+</head>
+<body>
+
+<div class="hero-blob" aria-hidden="true"></div>
+
+<nav class="nav">
+  <div class="wrapper nav-inner">
+    <div class="brand">
+      <span class="brand-logo" aria-hidden="true"></span>
+      <span>M J Prajwal</span>
+    </div>
+    <div class="menu">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#tools">Tools</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header>
+  <div class="wrapper hero">
+    <div class="hero-left">
+      <h1>Digital Marketing <span class="accent">Executive</span> & SEO Specialist</h1>
+      <p class="sub">Driving growth through strategy, creativity & data</p>
+      <p class="tagline">I run multi-channel campaigns (Google, Meta, Pinterest, Snapchat, TikTok), and I’m hands-on with On-Page, Off-Page & Technical SEO that translates into measurable impact.</p>
+
+      <div class="badges" style="margin: 14px 0 18px;">
+        <span class="chip">SEO (On/Off/Technical)</span>
+        <span class="chip">Performance Ads</span>
+        <span class="chip">Content Optimisation</span>
+        <span class="chip">GMB Ranking</span>
+        <span class="chip">Analytics & CRO</span>
+      </div>
+
+      <div class="cta">
+        <a class="btn primary" href="#contact">Get in Touch</a>
+        <a class="btn" href="mailto:prajwalmj0@gmail.com">prajwalmj0@gmail.com</a>
+      </div>
+
+      <div class="highlights">
+        <div class="highlight"><div class="big">120%+</div><div class="small">Organic Traffic Growth</div></div>
+        <div class="highlight"><div class="big">Top 3</div><div class="small">GMB for Core Keywords</div></div>
+        <div class="highlight"><div class="big">30%</div><div class="small">Bounce Rate Reduction</div></div>
+      </div>
+    </div>
+
+    <aside class="hero-card">
+      <div class="hero-card-top">
+        <div class="avatar" aria-label="Profile photo"></div>
+        <div>
+          <strong>M J Prajwal</strong><br />
+          <span class="small">Mysuru / Bangalore · Available for full-time & consulting</span>
+        </div>
+      </div>
+
+      <div class="badges" style="margin-bottom:12px">
+        <span class="chip">Google Analytics 4</span>
+        <span class="chip">Search Console</span>
+        <span class="chip">SEMrush</span>
+        <span class="chip">Ahrefs</span>
+        <span class="chip">Meta Business Suite</span>
+      </div>
+
+      <div class="hero-media" aria-label="Campaign preview">
+        <img src="https://images.unsplash.com/photo-1551281044-8d8d1ae5dc1b?w=1200&q=80&auto=format&fit=crop" alt="Analytics dashboard preview" />
+        <div class="playbar"></div>
+      </div>
+    </aside>
+  </div>
+</header>
+
+<main class="wrapper">
+
+  <!-- ABOUT -->
+  <section id="about" class="reveal">
+    <h2 class="section-title">
+      <!-- inline icon -->
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 12c2.761 0 5-2.239 5-5S14.761 2 12 2 7 4.239 7 7s2.239 5 5 5Zm0 2c-3.866 0-7 2.239-7 5v2h14v-2c0-2.761-3.134-5-7-5Z" fill="#00BFFF"/></svg>
+      About Me
+    </h2>
+    <p class="section-lead">
+      I’m a results-driven Digital Marketing Executive and SEO Specialist with hands-on experience across Google, Meta, Pinterest, Snapchat & TikTok Ads. I specialise in On-Page, Off-Page & Technical SEO, landing page optimisation, and content strategy to lift visibility and conversions.
+    </p>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="reveal">
+    <h2 class="section-title">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6a2 2 0 0 1 2-2h3l2 2h7a2 2 0 0 1 2 2v1H4V6Zm0 3h16v9a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9Z" fill="#00BFFF"/></svg>
+      Projects
+    </h2>
+
+    <div class="grid projects">
+
+      <!-- Make My Documents -->
+      <article class="project-card">
+        <figure class="project-media">
+          <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38?w=1200&q=80&auto=format&fit=crop" alt="Documents and laptop on desk" />
+        </figure>
+        <div class="project-body">
+          <h3 class="project-title">Make My Documents</h3>
+          <p class="meta"><b>Industry:</b> Document Services & Legal Assistance</p>
+          <p><b>Handled:</b> SEO (On-page, Off-page, Technical, Backlinking), Meta Ads, GMB Optimisation</p>
+          <ul class="bullets">
+            <li>Increased <b>organic website traffic by +120%</b> in 3 months.</li>
+            <li>Improved <b>page speed and reduced bounce rate by 30%</b>.</li>
+            <li>Generated steady monthly leads via <b>Meta Ads</b> with strong engagement.</li>
+            <li>Ranked in the <b>Top 3 GMB results</b> for core service keywords.</li>
+          </ul>
+          <div class="tools">
+            <span class="pill">Meta Business Suite</span>
+            <span class="pill">Google Analytics</span>
+            <span class="pill">Search Console</span>
+            <span class="pill">SEMrush</span>
+            <span class="pill">Ahrefs</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Lavish Events -->
+      <article class="project-card">
+        <figure class="project-media">
+          <img src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?w=1200&q=80&auto=format&fit=crop" alt="Event lighting and stage visuals" />
+        </figure>
+        <div class="project-body">
+          <h3 class="project-title">Lavish Events</h3>
+          <p class="meta"><b>Industry:</b> Event Planning, Wedding Décor & Corporate Events</p>
+          <p><b>Handled:</b> Meta Ads, SEO (Technical & Local), Content Optimisation, Blog Management</p>
+          <ul class="bullets">
+            <li>Boosted <b>event inquiries by 90%</b> with targeted Meta lead gen.</li>
+            <li>Optimised landing pages to achieve <b>+45% CTR</b>.</li>
+            <li>Grew local keyword rankings for event-intent searches.</li>
+            <li>Raised Instagram engagement by <b>60%</b> with creative ad visuals.</li>
+          </ul>
+          <div class="tools">
+            <span class="pill">Meta Business Suite</span>
+            <span class="pill">GA4</span>
+            <span class="pill">Canva</span>
+            <span class="pill">Keyword Planner</span>
+            <span class="pill">Search Console</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- TOOLS & EXPERTISE -->
+  <section id="tools" class="reveal">
+    <h2 class="section-title">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M10.325 4.317a1 1 0 0 1 1.35-.436l1.92.96a1 1 0 0 1 .466 1.386L12.9 8.6l2.5 4.33a1 1 0 0 1-1.366 1.366L9.7 11.8l-2.373 1.161a1 1 0 0 1-1.386-.466l-.96-1.92a1 1 0 0 1 .436-1.35l4.909-3.908Z" fill="#00BFFF"/></svg>
+      Tools & Expertise
+    </h2>
+    <p class="section-lead">Google Ads · Meta Business Suite · SEMrush · Ahrefs · GA4 · Search Console · Canva · WordPress · ChatGPT · GMB Optimisation · Technical SEO · Landing Page Optimisation · Content Writing</p>
+    <div class="skills-wrap">
+      <span class="chip">Keyword Research</span>
+      <span class="chip">Site Audits</span>
+      <span class="chip">Schema Markup</span>
+      <span class="chip">Link Building</span>
+      <span class="chip">Performance Ads</span>
+      <span class="chip">Funnel Strategy</span>
+      <span class="chip">A/B Testing</span>
+      <span class="chip">Heatmaps</span>
+      <span class="chip">Local SEO (GMB)</span>
+      <span class="chip">Content Calendars</span>
+      <span class="chip">Competitor Analysis</span>
+      <span class="chip">Reporting & Dashboards</span>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="reveal">
+    <h2 class="section-title">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v.5L12 12 2 6.5V6Zm0 3.236V18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9.236l-9.386 5.493a2 2 0 0 1-2.228 0L2 9.236Z" fill="#00BFFF"/></svg>
+      Contact
+    </h2>
+
+    <div class="contact-card">
+      <div class="contact-pane">
+        <h3 style="margin-top:0">Let’s build your next growth story</h3>
+        <p>Email: <a href="mailto:prajwalmj0@gmail.com">prajwalmj0@gmail.com</a></p>
+        <p>Open to: Full-time · Contract · Remote/Hybrid (Mysuru / Bangalore)</p>
+        <div class="badges" style="margin-top:10px">
+          <span class="chip">Avg. response &lt; 24h</span>
+          <span class="chip">Case studies on request</span>
+          <span class="chip">References available</span>
+        </div>
+      </div>
+      <div class="contact-pane">
+        <img src="https://images.unsplash.com/photo-1556767576-cfba3b6b7cf5?w=1200&q=80&auto=format&fit=crop" alt="Work desk with laptop and notes" />
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  © <span id="y"></span> M J Prajwal · Built with HTML & CSS
+</footer>
+
+<script>
+  // Year
+  document.getElementById('y').textContent = new Date().getFullYear();
+
+  // Simple reveal on scroll
+  const onScrollReveal = () => {
+    const els = document.querySelectorAll('.reveal');
+    const vh = window.innerHeight || 800;
+    els.forEach(el=>{
+      const rect = el.getBoundingClientRect();
+      if(rect.top < vh - 80){ el.classList.add('show'); }
+    });
+  };
+  ['scroll','load'].forEach(e=>window.addEventListener(e, onScrollReveal));
+</script>
+
+</body>
+</html>
